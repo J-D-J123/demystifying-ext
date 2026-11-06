@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; margin: 0; padding: 14px; background: #111; color: #eee; font: 13px/1.45 monospace; }
+    h3 { margin: 0 0 10px; font-size: 14px; }
+    label { display: flex; align-items: center; gap: 8px; margin: 6px 0; cursor: pointer; }
+    hr { border: 0; border-top: 1px solid #333; margin: 10px 0; }
+    button { width: 100%; padding: 7px; margin-top: 6px; background: #333; color: #eee;
+             border: 1px solid #555; cursor: pointer; font: inherit; }
+    #access { display: none; background: #3a2a00; border: 1px solid #a80; padding: 8px; margin-bottom: 10px; }
+    #access p { margin: 0 0 4px; color: #fc6; }
+    #grant { background: #a80; color: #111; border: 0; font-weight: bold; }
+    #note { color: #8c8; min-height: 1em; margin-top: 6px; }
+    #out { margin-top: 10px; white-space: pre-wrap; }
+    #learned { color: #aaa; margin-top: 4px; }
+    #learned .bar { display: flex; justify-content: space-between; }
+    #learned .pct { color: #777; }
+    #learned .words { max-height: 140px; overflow: auto; margin-top: 4px; }
+    #ver { color: #666; font-size: 11px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h3 id="title"></h3>
+  <div id="access">
+    <p>Can't run on sites automatically yet, only after you click it.</p>
+    <button id="grant">Allow on all websites</button>
+  </div>
+  <label><input type="checkbox" id="enabled"> Enabled</label>
+  <label><input type="checkbox" id="site"> On for <span id="hostname">this site</span></label>
+  <hr>
+  <label><input type="checkbox" id="plainView"> Open plain view first</label>
+  <label><input type="checkbox" id="showBanner"> "Plain view" button on original site</label>
+  <label><input type="checkbox" id="rewriteHeadline"> Rewrite headline on original site</label>
+  <label><input type="checkbox" id="replaceBuzzwords"> Replace buzzwords on original site</label>
+  <hr>
+  <label><input type="checkbox" id="learn"> Learn buzzwords from sites I visit</label>
+  <div id="learned"></div>
+  <button id="resetLearn">Reset learned words</button>
+  <hr>
+  <div id="note"></div>
+  <button id="toggle">Toggle plain view now</button>
+  <button id="reload">Apply (reload page)</button>
+  <button id="go">What does this site actually do?</button>
+  <div id="out"></div>
+  <div id="ver"></div>
+  <script src="learn.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
